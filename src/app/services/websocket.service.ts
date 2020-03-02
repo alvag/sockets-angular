@@ -14,7 +14,7 @@ export class WebsocketService {
 
     checkStstus() {
         this.socket.on( 'connect', () => {
-            console.log( 'Conectado al servidor' );
+            console.log( 'Conectado al servidor!' );
             this.socketStatus = true;
         } );
 

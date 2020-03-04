@@ -10,7 +10,7 @@ export class ChatService {
 
     sendMessage( message: string ) {
         const payload = {
-            from: 'Max',
+            from: this.wsService.user.name,
             body: message
         };
 
@@ -18,6 +18,10 @@ export class ChatService {
     }
 
     getMessages() {
-        return this.wsService.listen('new-message');
+        return this.wsService.listen( 'new-message' );
+    }
+
+    getPrivateMessages() {
+        return this.wsService.listen( 'private-message' );
     }
 }
